@@ -99,7 +99,7 @@
 }
 
 #bird3 {
-    top: 200px;
+    top: 150px;
     left: 240px;
 }
 
@@ -120,17 +120,17 @@
 
 #cloud2 {
     top: 20px;
-    left: 70px;
+    left: 90px;
 }
 
 #cloud3 {
     top: 30px;
-    left: 140px;
+    left: 270px;
 }
 
 #cloud4 {
     top: 20px;
-    left: 200px;
+    left: 360px;
 }
 
 /* 게임 오버 화면 */
@@ -178,7 +178,7 @@ button:hover {
 }
 
 #final-image {
-    width: 200px; /* Final 이미지 크기 크게 설정 */
+    width: 320px; /* Final 이미지 크기 크게 설정 */
     margin-top: 20px;
     animation: zoomIn 2s ease-in-out infinite alternate; /* 애니메이션 추가 */
 }
