@@ -1,0 +1,197 @@
+/* 게임 컨테이너 */
+#game-container {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px solid black;
+}
+
+#game-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%; /* 상단 부분 */
+    background-color: #59A2C6; /* 하늘색 */
+    z-index: 0; /* 배경 뒤로 */
+}
+
+/* 하단 갈색 배경 (땅) */
+#game-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%; /* 하단 부분 */
+    background-color: #8B4513; /* 갈색 */
+    z-index: 0; /* 배경 뒤로 */
+}
+/* 게임 요소들 (강아지, 집 등) */
+#dog, #house, #obstacle-container, #bird1, #bird2, #bird3, #cloud1, #cloud2, #cloud3, #cloud4{
+    position: absolute;
+    z-index: 1; /* 게임 요소들이 배경 위에 보이도록 설정 */
+}
+/* 강아지 캐릭터 */
+#dog {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    width: 100px; 
+    height: 100px;
+    background-image: url('dog.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* 장애물 컨테이너 */
+#obstacle-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* 장애물 */
+.obstacle {
+    position: absolute;
+    bottom: 20px;
+    height:100px;
+    background-image: url('tree.png'); /* 나무 이미지 경로 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 집 */
+#house {
+    position: absolute;
+    bottom: 20px;
+    left: 1300px;
+    width: 220px;
+    height: 220px;
+    background-image: url('house.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 새 */
+#bird1, #bird2, #bird3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-image: url('bird.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#bird1 {
+    top: 150px;
+    left: 20px;
+}
+
+#bird2 {
+    top: 130px;
+    left: 130px;
+}
+
+#bird3 {
+    top: 200px;
+    left: 600px;
+}
+
+/* 구름 */
+#cloud1, #cloud2, #cloud3, #cloud4 {
+    position: absolute;
+    width: 120px;
+    height:190px;
+    background-image: url('cloud.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#cloud1 {
+    top: 30px;
+    left: 0px;
+}
+
+#cloud2 {
+    top: 20px;
+    left: 50px;
+}
+
+#cloud3 {
+    top: 30px;
+    left: 100px;
+}
+
+#cloud4 {
+    top: 20px;
+    left: 200px;
+}
+
+/* 게임 오버 화면 */
+#game-over-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/* Final 화면 */
+#final-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 2; /* Final 화면을 최상위로 표시 */
+}
+
+#final-image {
+    width: 200px; /* Final 이미지 크기 크게 설정 */
+    margin-top: 20px;
+    animation: zoomIn 2s ease-in-out infinite alternate; /* 애니메이션 추가 */
+}
+
+/* 강조 애니메이션 */
+@keyframes zoomIn {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
