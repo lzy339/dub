@@ -1,7 +1,7 @@
 /* 게임 컨테이너 */
 #game-container {
     position: relative;
-    width: 300px;
+    width: 400px;
     height: 600px;
     margin: 0 auto;
     overflow: hidden;
@@ -100,7 +100,7 @@
 
 #bird3 {
     top: 200px;
-    left: 600px;
+    left: 240px;
 }
 
 /* 구름 */
@@ -120,12 +120,12 @@
 
 #cloud2 {
     top: 20px;
-    left: 50px;
+    left: 70px;
 }
 
 #cloud3 {
     top: 30px;
-    left: 100px;
+    left: 140px;
 }
 
 #cloud4 {
